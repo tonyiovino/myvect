@@ -53,8 +53,14 @@ void myvect_print(const int v[], const int size){
 	putchar('\n');
 }
 
-/*
 void myvect_reverse(int v[], const int size){
-	print("Help me, i can't do this\n");
+
+	int i;
+	int temp;
+
+	for (i = 0; i < size/2; i++) {
+		temp = v[i];
+		v[i] = v[size-i-1];
+		v[size-i-1] = temp;
+	}
 }
-*/
