@@ -12,7 +12,7 @@ int myvect_sum(int v[], const int size){
 	return sum;
 }
 
-double myvect_mean(int v[], const int size){
+/*double myvect_mean(int v[], const int size){
 
 	double mean;
 	int i;
@@ -25,7 +25,7 @@ double myvect_mean(int v[], const int size){
 	return mean;
 }
 
-/*void myvect_sequence(int v[], const int size, const int start, const int step){
+void myvect_sequence(int v[], const int size, const int start, const int step){
 
 	int i, num;
 	
