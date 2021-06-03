@@ -15,20 +15,7 @@ int myvect_sum(int v[], const int size){
 
 double myvect_mean(int v[], const int size){
 
-	int sum = 0;
-	int i;
-
-	/*
-	Alternative:
-	sum = myvect_sum(v, size);
-	return (double) sum / size
-	*/
-
-	for (i = 0; i < size; i++) {
-		sum += v[i];
-	}
-
-	return (double) sum / i;
+	return (double) myvect_sum(v, size) / size;
 }
 
 int myvect_min(const int v[], const int size){
@@ -37,7 +24,7 @@ int myvect_min(const int v[], const int size){
 	int i;
 
 	min = v[0];
-	for (i = 0; i < size; i++) {
+	for (i = 1; i < size; i++) {
 		if (v[i] < min) min = v[i];
 	}
 
@@ -50,7 +37,7 @@ int myvect_max(const int v[], const int size){
 	int i;
 
 	max = v[0];
-	for (i = 0; i < size; i++) {
+	for (i = 1; i < size; i++) {
 		if (v[i] > max) max = v[i];
 	}
 
@@ -65,7 +52,7 @@ int myvect_min_index(const int v[], const int size){
 
 	min = v[0];
 	pos = 0;
-	for (i = 0; i < size; i++) {
+	for (i = 1; i < size; i++) {
 		if (v[i] < min){
 			min = v[i];
 			pos = i;
@@ -83,12 +70,24 @@ int myvect_max_index(const int v[], const int size){
 
 	max = v[0];
 	pos = 0;
-	for (i = 0; i < size; i++) {
-		if (v[i] < max){
+	for (i = 1; i < size; i++) {
+		if (v[i] > max){
 			max = v[i];
 			pos = i;
 		}
 	}
 
 	return pos;
+}
+
+int myvect_dot_product(const int v1[], const int v2[], const int size){
+
+	int prod = 0;
+	int i;
+
+	for (i = 0; i < size; i++) {
+		prod += v1[i] * v2[i];
+	}
+
+	return prod;
 }
