@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "myvect.h"
 
 int myvect_sum(int v[], const int size){
 
@@ -12,57 +13,82 @@ int myvect_sum(int v[], const int size){
 	return sum;
 }
 
-/*double myvect_mean(int v[], const int size){
+double myvect_mean(int v[], const int size){
 
-	double mean;
+	int sum = 0;
 	int i;
 
+	/*
+	Alternative:
+	sum = myvect_sum(v, size);
+	return (double) sum / size
+	*/
+
 	for (i = 0; i < size; i++) {
-		v[i] = 1;
-		printf("%d", i);
+		sum += v[i];
 	}
 
-	return mean;
+	return (double) sum / i;
 }
 
-void myvect_sequence(int v[], const int size, const int start, const int step){
+int myvect_min(const int v[], const int size){
 
-	int i, num;
-	
-	num = start;
-	for (i = 0; i < size; i++) {
-		v[i] = num;
-		num += step;
-	}
-}
-
-void myvect_random(int v[], const int size, const int min, const int max){
-
+	int min;
 	int i;
 
+	min = v[0];
 	for (i = 0; i < size; i++) {
-		v[i] = random_between(min, max);
+		if (v[i] < min) min = v[i];
 	}
+
+	return min;
 }
 
-void myvect_print(const int v[], const int size){
+int myvect_max(const int v[], const int size){
 
+	int max;
 	int i;
 
+	max = v[0];
 	for (i = 0; i < size; i++) {
-		printf("%d ", v[i]);
+		if (v[i] > max) max = v[i];
 	}
-	putchar('\n');
+
+	return max;
 }
 
-void myvect_reverse(int v[], const int size){
+int myvect_min_index(const int v[], const int size){
 
+	int min;
+	int pos;
 	int i;
-	int temp;
 
-	for (i = 0; i < size/2; i++) {
-		temp = v[i];
-		v[i] = v[size-i-1];
-		v[size-i-1] = temp;
+	min = v[0];
+	pos = 0;
+	for (i = 0; i < size; i++) {
+		if (v[i] < min){
+			min = v[i];
+			pos = i;
+		}
 	}
-}*/
+
+	return pos;
+}
+
+int myvect_max_index(const int v[], const int size){
+
+	int max;
+	int pos;
+	int i;
+
+	max = v[0];
+	pos = 0;
+	for (i = 0; i < size; i++) {
+		if (v[i] < max){
+			max = v[i];
+			pos = i;
+		}
+	}
+
+	return pos;
+}
