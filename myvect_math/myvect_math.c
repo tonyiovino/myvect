@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "myvect.h"
+#include "myvect_math.h"
 
 int myvect_sum(int v[], const int size){
 
@@ -20,28 +21,12 @@ double myvect_mean(int v[], const int size){
 
 int myvect_min(const int v[], const int size){
 
-	int min;
-	int i;
-
-	min = v[0];
-	for (i = 1; i < size; i++) {
-		if (v[i] < min) min = v[i];
-	}
-
-	return min;
+	return v[myvect_min_index(v, size)];
 }
 
 int myvect_max(const int v[], const int size){
 
-	int max;
-	int i;
-
-	max = v[0];
-	for (i = 1; i < size; i++) {
-		if (v[i] > max) max = v[i];
-	}
-
-	return max;
+	return v[myvect_max_index(v, size)];
 }
 
 int myvect_min_index(const int v[], const int size){
