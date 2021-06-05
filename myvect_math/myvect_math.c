@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "myvect.h"
 #include "myvect_math.h"
 
