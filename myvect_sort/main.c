@@ -10,9 +10,9 @@ int main() {
 
 	myvect_init();
 
-	myvect_random(v, N, 1, 20);
-
 	printf("**** BUBBLE SORT ****\n\n");
+
+	myvect_random(v, N, 1, 20);
 
 	printf("Ecoo il vettore:\n");
 	myvect_print(v, N);
@@ -26,6 +26,8 @@ int main() {
 
 	putchar('\n');
 	printf("**** SELECTION SORT ****\n\n");
+
+	myvect_random(v, N, 1, 20);
 
 	printf("Ecoo il vettore:\n");
 	myvect_print(v, N);
