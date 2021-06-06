@@ -1,15 +1,6 @@
-#include <stdio.h>
+#include "myvect.h"
+#include "myvect_math.h"
 #include "myvect_sort.h"
-
-/* Questa funzione la sposto in myvect.h? */
-void myvect_swap(int v[], int i, int j, const int size){
-
-	int temp;
-
-	temp = v[i];
-	v[i] = v[j];
-	v[j] = temp;
-}
 
 void myvect_bubble_sort(int v[], const int size){
 
@@ -24,4 +15,17 @@ void myvect_bubble_sort(int v[], const int size){
 			}
 		}
 	}
+}
+
+void myvect_selection_sort(int v[], const int size){
+
+	int pos_min;
+
+	if (size == 1) return;
+
+	pos_min = myvect_min_index(v, size);
+
+	myvect_swap(v, 0, pos_min, size);
+
+	myvect_selection_sort(&v[1], size-1);
 }

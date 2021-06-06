@@ -64,3 +64,12 @@ void myvect_reverse(int v[], const int size){
 		v[size-i-1] = temp;
 	}
 }
+
+void myvect_swap(int v[], int i, int j, const int size){
+
+	int temp;
+
+	temp = v[i];
+	v[i] = v[j];
+	v[j] = temp;
+}
