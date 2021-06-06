@@ -12,11 +12,26 @@ int main() {
 
 	myvect_random(v, N, 1, 20);
 
+	printf("**** BUBBLE SORT ****\n\n");
+
 	printf("Ecoo il vettore:\n");
 	myvect_print(v, N);
 	putchar('\n');
 
 	myvect_bubble_sort(v, N);
+
+	printf("Ecoo il vettore ordinato:\n");
+	myvect_print(v, N);
+	putchar('\n');
+
+	putchar('\n');
+	printf("**** SELECTION SORT ****\n\n");
+
+	printf("Ecoo il vettore:\n");
+	myvect_print(v, N);
+	putchar('\n');
+
+	myvect_selection_sort(v, N);
 
 	printf("Ecoo il vettore ordinato:\n");
 	myvect_print(v, N);
