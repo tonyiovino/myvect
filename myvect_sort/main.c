@@ -14,13 +14,13 @@ int main() {
 
 	myvect_random(v, N, 1, 20);
 
-	printf("Ecoo il vettore:\n");
+	printf("Ecco il vettore:\n");
 	myvect_print(v, N);
 	putchar('\n');
 
 	myvect_bubble_sort(v, N);
 
-	printf("Ecoo il vettore ordinato:\n");
+	printf("Ecco il vettore ordinato:\n");
 	myvect_print(v, N);
 	putchar('\n');
 
@@ -29,13 +29,13 @@ int main() {
 
 	myvect_random(v, N, 1, 20);
 
-	printf("Ecoo il vettore:\n");
+	printf("Ecco il vettore:\n");
 	myvect_print(v, N);
 	putchar('\n');
 
 	myvect_selection_sort(v, N);
 
-	printf("Ecoo il vettore ordinato:\n");
+	printf("Ecco il vettore ordinato:\n");
 	myvect_print(v, N);
 	putchar('\n');
 

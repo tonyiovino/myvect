@@ -14,7 +14,7 @@ int main() {
 
 	myvect_random(v, N, 1, 20);
 
-	printf("Ecoo il vettore:\n");
+	printf("Ecco il vettore:\n");
 	myvect_print(v, N);
 	putchar('\n');
 

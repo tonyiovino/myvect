@@ -8,7 +8,7 @@ void myvect_bubble_sort(int v[], const int size){
 	int i;
 	int swap = 1;
 
-	for (pass = 1; pass < size-1 && swap != 0; pass++) {
+	for (pass = 1; pass < size && swap != 0; pass++) {
 
 		swap = 0;
 		for (i = 0; i < size-pass; i++) {
