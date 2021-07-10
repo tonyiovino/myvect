@@ -10,7 +10,6 @@ int myvect_linear_search(const int v[], const int size, const int key){
 
 	return -1;
 }
-
 int myvect_binary_search(const int v[], const int size, const int key){
 
 	int sx, dx, md;
