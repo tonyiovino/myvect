@@ -53,18 +53,6 @@ void myvect_print(const int v[], const int size){
 	putchar('\n');
 }
 
-void myvect_reverse(int v[], const int size){
-
-	int i;
-	int temp;
-
-	for (i = 0; i < size/2; i++) {
-		temp = v[i];
-		v[i] = v[size-i-1];
-		v[size-i-1] = temp;
-	}
-}
-
 void myvect_swap(int v[], int i, int j, const int size){
 
 	int temp;
@@ -72,4 +60,13 @@ void myvect_swap(int v[], int i, int j, const int size){
 	temp = v[i];
 	v[i] = v[j];
 	v[j] = temp;
+}
+
+void myvect_reverse(int v[], const int size){
+
+	int i;
+
+	for (i = 0; i < size/2; i++) {
+		myvect_swap(v, i, size-i-1, size);
+	}
 }
