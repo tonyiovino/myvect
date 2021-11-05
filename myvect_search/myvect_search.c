@@ -1,3 +1,7 @@
+#include "myvect_search.h"
+
+int myvect_binary_search_helper(const int v[], const int size, const int key, int low, int high);
+
 int myvect_linear_search(const int v[], const int size, const int key){
 
 	int i;
@@ -10,26 +14,23 @@ int myvect_linear_search(const int v[], const int size, const int key){
 
 	return -1;
 }
+
 int myvect_binary_search(const int v[], const int size, const int key){
 
-	int sx, dx, md;
-	int i;
+	return myvect_binary_search_helper(v, size, key, 0, size-1);
+}
 
-	for (i = 0; i < size && sx <= dx; i++) {
-		sx = i;
-		dx = size - 1;
-		md = (sx + dx) / 2;
+int myvect_binary_search_helper(const int v[], const int size, const int key, const int low, const int high){
 
-		if (v[md] == key) {
-			return md + 1;
-		}
-		if (key < v[md]) {
-			dx = md - 1;
-		}
-		else if (key > v[md]) {
-			sx = md + 1;
-		}
-	}
+	int middle;
 
-	return -1;
+	if (low > high) return -1;
+
+	middle = (low + high) / 2;
+
+	if (v[middle] == key) return middle;
+
+	else if (key < v[middle]) return myvect_binary_search_helper(v, size, key, low, middle-1);
+
+	else return myvect_binary_search_helper(v, size, key, middle+1, high);
 }

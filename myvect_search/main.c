@@ -27,7 +27,7 @@ int main() {
 	trovato = myvect_binary_search(v, N, num);
 
 	if (trovato >= 0) {
-		printf("Trovato il numero %d alla posizione: %d\n", num, trovato);
+		printf("Trovato il numero %d\n", num);
 	}
 	else {
 		printf("Il numero %d non è stato trovato nel vettore.\n", num);
